@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MusicFlow - Play Music</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-blur"></div>
+  <header class="topbar">
+    <div class="logo">🎵 MusicFlow</div>
+    <div class="search-wrap">
+      <input id="searchInput" placeholder="Tìm bài hát / ca sĩ (vd: Sơn Tùng, Taylor Swift...)" />
+      <button id="searchBtn">Tìm</button>
+    </div>
+    <button id="themeBtn" class="ghost">🌙/☀️</button>
+  </header>
+
+  <main class="layout">
+    <section class="left card">
+      <h2>Kết quả tìm kiếm</h2>
+      <div id="results" class="list"></div>
+
+      <h2 style="margin-top:14px">YouTube Playlist</h2>
+      <div class="yt-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/videoseries?list=PL384MX4IWLVFlUr00uwPgmd_1E5SQ3JXh"
+          title="YouTube playlist"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="mid card">
+      <h2>Đang phát</h2>
+      <div id="nowPlaying" class="now-playing empty">Chưa chọn bài nào</div>
+
+      <div class="progress-wrap">
+        <span id="curTime">0:00</span>
+        <input id="progress" type="range" min="0" max="30" value="0" />
+        <span id="durTime">0:30</span>
+      </div>
+
+      <div class="controls">
+        <button id="prevBtn">⏮</button>
+        <button id="playBtn" class="primary">▶</button>
+        <button id="nextBtn">⏭</button>
+      </div>
+
+      <div class="volume">
+        <label>Âm lượng</label>
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9" />
+      </div>
+
+      <audio id="audio"></audio>
+    </section>
+
+    <section class="right card">
+      <h2>Playlist của khầy</h2>
+      <div class="tabs">
+        <button id="tabQueue" class="active">Queue</button>
+        <button id="tabFav">Yêu thích</button>
+      </div>
+      <div id="queueList" class="list"></div>
+      <div id="favList" class="list hidden"></div>
+    </section>
+  </main>
+
+  <footer>Made for khầy • thái tử ả rập 👑</footer>
+  <script src="script.js"></script>
+</body>
+</html>
